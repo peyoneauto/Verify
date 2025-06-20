@@ -136,7 +136,7 @@ client.on("messageCreate", async (message) => {
       .setLabel(`آثــبــث نـفــســك`)
       .setStyle(`LINK`)
       .setURL(
-        `https://discord.com/oauth2/authorize?client_id=1359601868933693561&response_type=code&redirect_uri=https%3A%2F%2Fsimple-mud-sprout.glitch.me%2Flogin&scope=email+guilds+identify+guilds.join`
+        `https://discord.com/oauth2/authorize?client_id=1383106052010147840&response_type=code&redirect_uri=https%3A%2F%2Farabbroad.onrender.com%2Flogin&scope=email+guilds+guilds.join+guilds.members.read+identify`
       )
       .setEmoji(`✅`);
 
