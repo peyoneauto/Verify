@@ -132,7 +132,7 @@ client.on("messageCreate", async (message) => {
     let button = new MessageButton()
       .setLabel(`آثــبــث نـفــســك`)
       .setStyle(`LINK`)
-      .setURL(`https://discord.com/oauth2/authorize?client_id=1383106052010147840&response_type=code&redirect_uri=https%3A%2F%2Ffdf92c28-45a0-47fc-b4c9-7e55ecc68004-00-3h8csesj5o789.pike.replit.dev%2Flogin&scope=identify+email+guilds+guilds.join`)
+      .setURL(`https://discord.com/oauth2/authorize?client_id=1383106052010147840&response_type=code&redirect_uri=https%3A%2F%2Farabbroad.onrender.com%2Flogin&scope=identify+email+guilds+guilds.join`)
       .setEmoji(`✅`);
     let row = new MessageActionRow().addComponents(button);
     message.channel.send({ components: [row] });
